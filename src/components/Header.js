@@ -1,4 +1,3 @@
-import React from 'react'; 
 import Button from './Button';
 
 const Header = ({title, showAddForm, showForm}) => {
@@ -9,5 +8,4 @@ const Header = ({title, showAddForm, showForm}) => {
         </header>
     )
 }
-
 export default Header;

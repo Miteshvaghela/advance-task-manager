@@ -4,12 +4,18 @@
       "id": 338,
       "text": "Family Dinner ",
       "day": "19th jan 2023",
-      "reminder": true
+      "reminder": false
     },
     {
       "id": 725,
       "text": "App deployment ",
       "day": "20th jan 2023",
+      "reminder": false
+    },
+    {
+      "id": 163,
+      "text": "New task ",
+      "day": "1st feb 2023",
       "reminder": true
     }
   ]

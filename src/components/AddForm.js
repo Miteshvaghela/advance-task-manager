@@ -1,5 +1,4 @@
-import {React, useState} from 'react'; 
-
+import {useState} from 'react'; 
 const AddForm = ({addTask}) => {
 
     const [title, setTitle] = useState('')
@@ -8,7 +7,6 @@ const AddForm = ({addTask}) => {
 
     const saveTask = (e) => {
         e.preventDefault();
-
         if(!title.length){
             alert('Please enter title');
             return;
@@ -19,10 +17,7 @@ const AddForm = ({addTask}) => {
         setTitle('');
         setDay('');
         setReminder(false)
-
     }
-
-
     return (
         <form className="add-form" onSubmit={saveTask}>
             <div className="form-control">
