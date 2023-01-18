@@ -20,8 +20,6 @@ const AddForm = ({addTask}) => {
         setReminder(false)
 
     }
-
-
     return (
         <form className="add-form" onSubmit={saveTask}>
             <div className="form-control">

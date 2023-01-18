@@ -1,15 +1,12 @@
-import {React, useState, useEffect} from 'react'; 
+import {useState, useEffect} from 'react'; 
 import './App.css';
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import AddForm from './components/AddForm';
 import SearchForm from './components/SearchForm';
-import About from './components/About'; 
-
-// tomorrow i'll react-router-dom to enable routing feature the app.
+import About from './components/About';
 
 const App = () => {
-
   const [showForm, setShowForm] = useState(false); // state is an object that determine and decide how component will render and behave.
   const [tasks, setTasks] = useState([]);
   const [term, setTerm] = useState('');
@@ -28,8 +25,7 @@ const App = () => {
 
   const fetchTasks = async () => {
     const allTasks = await fetch('http://localhost:8000/tasks');
-    const res = await allTasks.json(); 
-
+    const res = await allTasks.json();
     return res;
   }
  
@@ -65,14 +61,12 @@ const App = () => {
   }
 
   const addTask = async (obj) => {
-
     const newTask = {
       id : Math.floor(Math.random() * 1000)+1, 
       text: obj.title, 
       day: obj.day, 
       reminder: obj.reminder,
     }
-
     const task1 = await fetch('http://localhost:8000/tasks',{
       method : 'POST',
       headers : {
@@ -80,7 +74,6 @@ const App = () => {
       },
       body : JSON.stringify(newTask)
     });
-
     const res = await task1.json();
     setTasks([...tasks, res]); 
   }
@@ -96,15 +89,10 @@ const App = () => {
   return (
     <div className="container">
       <Header title="Task Manager" showAddForm={showAddForm} showForm={showForm}/>
-
       {!showForm && <SearchForm searchTerm={searchTerm}/>}
-
       {showForm && <AddForm addTask={addTask} />}
-
       <Tasks tasks={tasks} deleteMe={deleteMe} toggleMe={toggleMe} updateMe={updateMe}/>
-
-      <About />
-      
+      <About />      
     </div>
   )
 }

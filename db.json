@@ -5,12 +5,6 @@
       "text": "New task",
       "day": "1st feb 2023",
       "reminder": false
-    },
-    {
-      "id": 895,
-      "text": "desktop repair",
-      "day": "1st feb 2023",
-      "reminder": true
     }
   ]
 }
