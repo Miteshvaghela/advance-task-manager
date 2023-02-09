@@ -1,5 +1,4 @@
 import {useState, useEffect} from 'react'; 
-import './App.css';
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import AddForm from './components/AddForm';
