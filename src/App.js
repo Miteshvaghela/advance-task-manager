@@ -63,7 +63,7 @@ const App = () => {
     const newTask = {
       id : Math.floor(Math.random() * 1000)+1, 
       text: obj.title, 
-      day: obj.day, 
+      day: obj.day.toLocaleDateString(), 
       reminder: obj.reminder,
     }
     const task1 = await fetch('http://localhost:8000/tasks',{
