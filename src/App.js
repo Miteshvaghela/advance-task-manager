@@ -4,7 +4,6 @@ import Tasks from './components/Tasks';
 import AddForm from './components/AddForm';
 import SearchForm from './components/SearchForm';
 import About from './components/About';
-
 const App = () => {
   const [showForm, setShowForm] = useState(false); // state is an object that determine and decide how component will render and behave.
   const [tasks, setTasks] = useState([]);
