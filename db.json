@@ -1,22 +1,16 @@
 {
   "tasks": [
     {
-      "id": 343,
-      "text": "New Task",
-      "day": "17/02/2023",
-      "reminder": true
-    },
-    {
-      "id": 586,
-      "text": "Again new task",
-      "day": "24/02/2023",
-      "reminder": false
-    },
-    {
       "id": 482,
       "text": "Watch a movie on netflix",
       "day": "27/07/2023",
-      "reminder": false
+      "reminder": true
+    },
+    {
+      "id": 598,
+      "text": "Complete your first technical blog",
+      "day": "26/07/2023",
+      "reminder": true
     }
   ]
 }

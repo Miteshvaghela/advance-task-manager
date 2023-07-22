@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import AddForm from './components/AddForm';
+import EditForm from './components/EditForm';
 import SearchForm from './components/SearchForm';
 import About from './components/About';
 
@@ -9,8 +10,10 @@ import About from './components/About';
 const App = () => {
 
   const [showForm, setShowForm] = useState(false); // state is an object that determine and decide how component will render and behave.
+  const [showEditForm, setShowEditForm] = useState(false);
   const [tasks, setTasks] = useState([]);
   const [term, setTerm] = useState('');
+  const [currentTask, setCurrentTask] = useState({});
  
   useEffect(() => {  // useEffect to perform side effect in react app 
     const getTasks = async () => {
@@ -87,19 +90,27 @@ const App = () => {
     setTerm(text);
 
   }
-  const updateMe = (task) => {
+  const editTask = (task) => {    
 
-      setShowForm(true);
-      console.log(task);
-      
+    setShowForm(false);
+    setShowEditForm(true); 
+    setCurrentTask(task);      
+    console.log(task);
+    console.log(task.day);
+    
+  }
+
+  const updateTask = (task) => {
+    console.log('finally update the task.');
   }
 
   return (
     <div className="container">
       <Header title="Task Manager" showAddForm={showAddForm} showForm={showForm}/>
-      {!showForm && <SearchForm searchTerm={searchTerm}/>}
+      {!showForm && !showEditForm && <SearchForm searchTerm={searchTerm}/>}
       {showForm && <AddForm addTask={addTask} />}
-      <Tasks tasks={tasks} deleteMe={deleteMe} toggleMe={toggleMe} updateMe={updateMe}/>
+      {showEditForm && <EditForm updateTask={updateTask} currentTask={currentTask} />}
+      <Tasks tasks={tasks} deleteMe={deleteMe} toggleMe={toggleMe} editTask={editTask}/>
       <About />      
     </div>
   )
