@@ -4,7 +4,10 @@ import Tasks from './components/Tasks';
 import AddForm from './components/AddForm';
 import SearchForm from './components/SearchForm';
 import About from './components/About';
+
+
 const App = () => {
+
   const [showForm, setShowForm] = useState(false); // state is an object that determine and decide how component will render and behave.
   const [tasks, setTasks] = useState([]);
   const [term, setTerm] = useState('');
@@ -45,6 +48,7 @@ const App = () => {
   }
 
   const toggleMe = async (id) => {
+
     const task = await fetchTask(id);
     task.reminder = !task.reminder;
     await fetch(`http://localhost:8000/tasks/${id}`, {
@@ -59,6 +63,7 @@ const App = () => {
   }
 
   const addTask = async (obj) => {
+
     const newTask = {
       id : Math.floor(Math.random() * 1000)+1, 
       text: obj.title, 
@@ -74,14 +79,19 @@ const App = () => {
     });
     const res = await task1.json();
     setTasks([...tasks, res]); 
+
   }
 
   const searchTerm = async (text) => {
+
     setTerm(text);
+
   }
   const updateMe = (task) => {
+
       setShowForm(true);
       console.log(task);
+      
   }
 
   return (
