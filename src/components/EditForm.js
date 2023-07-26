@@ -7,8 +7,7 @@ const EditForm = ({currentTask, editTask}) => {
 
     const [title, setTitle] = useState(currentTask.text)
     const [day, setDay] = useState(new Date())
-    const [reminder, setReminder] = useState(currentTask.reminder)
-     
+    const [reminder, setReminder] = useState(currentTask.reminder)     
 
     const saveTask = (e) => {
         e.preventDefault();

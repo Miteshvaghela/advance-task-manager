@@ -51,7 +51,6 @@ const App = () => {
   }
 
   const toggleMe = async (id) => {
-
     const task = await fetchTask(id);
     task.reminder = !task.reminder;
     await fetch(`http://localhost:8000/tasks/${id}`, {
@@ -97,7 +96,7 @@ const App = () => {
     setCurrentTask(task);      
     console.log(task);
     console.log(task.day);
-    
+
   }
 
   const updateTask = (task) => {
