@@ -1,11 +1,10 @@
-import {useState, useEffect} from 'react'; 
+import React, {useState, useEffect} from 'react'; 
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import AddForm from './components/AddForm';
 import EditForm from './components/EditForm';
 import SearchForm from './components/SearchForm';
 import About from './components/About';
-
 
 const App = () => {
 
